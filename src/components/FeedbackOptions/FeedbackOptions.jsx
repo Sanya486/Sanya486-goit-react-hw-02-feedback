@@ -17,3 +17,4 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   ));
   return <ButtonWrapper>{buttonsEl}</ButtonWrapper>;
 };
+
