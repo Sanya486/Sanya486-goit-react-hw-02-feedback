@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types'
+
 
 const Option = styled.p`
   text-transform: capitalize;
@@ -29,4 +31,14 @@ export const Statistics = ({ options, total, positivePercentage }) => {
       </Option>
     </>
   );
+};
+
+Statistics.propTypes = {
+  options: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+  total: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.func.isRequired,
 };

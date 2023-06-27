@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margin: 100px auto;
@@ -7,6 +8,6 @@ const Wrapper = styled.div`
   padding: 50px;
 `;
 
-export const Container = ({ children}) => {
-    return <Wrapper>{children}</Wrapper>;
-}
+export const Container = ({ children }) => {
+  return <Wrapper>{children}</Wrapper>;
+};
