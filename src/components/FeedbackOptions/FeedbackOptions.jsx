@@ -1,16 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import PropTypes from 'prop-types';
 
-const Button = styled.button`
-  text-transform: capitalize;
-  display: flex;
-`;
-const ButtonWrapper = styled.div`
-  display: flex;
-  gap: 10px;
-`;
+import { Button, ButtonWrapper } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const buttonsEl = options.map((option, index) => (
@@ -22,6 +14,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string.isRequired,),
   onLeaveFeedback: PropTypes.func.isRequired,
 };

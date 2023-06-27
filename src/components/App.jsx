@@ -39,22 +39,25 @@ export class App extends Component {
     return (
       <>
         <Container>
-          <Section title={'Please leave feedback'} />
-          <FeedbackOptions
-            options={Object.keys(this.state)}
-            onLeaveFeedback={this.onButtonClick}
-          />
-          <Section title={'Statistics'} />
-          {/* Вирішив трохи відійти від умови. Передав в Statistics  пропом весь state, для того щоб можна було легко додавати нові опції. Додаючи просто нову властивість в state автоматично буде додаватися нова кнопка та новий <p> в Statistics. */}
-          {this.totalFeedbacksCount() > 0 ? (
-            <Statistics
-              options={this.state}
-              total={this.totalFeedbacksCount}
-              positivePercentage={this.positivePercentageCount}
+          <Section title={'Please leave feedback'}>
+            <FeedbackOptions
+              options={Object.keys(this.state)}
+              onLeaveFeedback={this.onButtonClick}
             />
-          ) : (
-            <Notification message={'No feedback given'} />
-          )}
+          </Section>
+          <Section title={'Statistics'}>
+            {/* Вирішив трохи відійти від умови. Передав в Statistics  пропом весь state, для того щоб можна було легко додавати нові опції. Додаючи просто нову властивість в state автоматично буде додаватися нова кнопка та новий <p> в Statistics. */}
+            {this.totalFeedbacksCount() > 0 ? (
+              <Statistics
+                options={this.state}
+                total={this.totalFeedbacksCount}
+                positivePercentage={this.positivePercentageCount}
+              />
+            ) : (
+              <Notification message={'No feedback given'} />
+            )}
+          </Section>
+          
         </Container>
       </>
     );

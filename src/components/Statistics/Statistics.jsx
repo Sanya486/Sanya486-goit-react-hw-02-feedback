@@ -1,13 +1,8 @@
-import styled from 'styled-components';
+import React from 'react';
 import PropTypes from 'prop-types'
 
+import { Option, Span } from './Statistics.styled';
 
-const Option = styled.p`
-  text-transform: capitalize;
-`;
-const Span = styled.span`
-  font-weight: bold;
-`;
 
 export const Statistics = ({ options, total, positivePercentage }) => {
   const totalFeedback = total();

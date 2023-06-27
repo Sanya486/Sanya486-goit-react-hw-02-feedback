@@ -1,13 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  margin: 100px auto;
-  width: 500px;
-  border: 1px dashed black;
-  padding: 50px;
-`;
+import PropTypes from 'prop-types';
+
+import { Wrapper } from './Container.styled';
 
 export const Container = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
 };
+
+
+Container.propTypes = {
+  children: PropTypes.any,
+}
